@@ -3,14 +3,14 @@
 books = [
     {   'id':1,
         'title':'Woof',
-        'Genre':'Fiction',
-        'Synopsis':'A book about dogs'
+        'genre':'Fiction',
+        'synopsis':'A book about dogs'
             },
     {
         'id':2,
         'title':'Mario',
-        'Genre':'Gaming',
-        'Synopsis':'Mario goes to save princess Peach'
+        'genre':'Gaming',
+        'synopsis':'Mario goes to save princess Peach'
     }
         ]
 

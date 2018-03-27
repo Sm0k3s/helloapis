@@ -1,12 +1,16 @@
 import unittest
 
-import models.py
+from app import models, data
 
 class testing_models(unittest.TestCase):
     """books testing class"""
     def setUp(self):
-        self.my
+        self.my_book = Books()
 
-'''class tests_for_hello_books(unittest.TestCase):
-    def (self,):
-        '''
+
+    def test_add_book(self):
+        self.my_book.put('Paradise','Fantasy','Dreams of a happy soul in a happy place')
+        self.assertIn('Paradise', books[-1])
+
+if __name__=='__main__':
+    unittest.main()
