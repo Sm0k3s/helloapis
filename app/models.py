@@ -1,43 +1,72 @@
-"""#from data import books, users
-commented this import cause when I run a test
-    its keeps telling me no module named 'data' on cmd, am using nosetests
 
-"""
-"""books list that stores in dicts"""
-books = [
-    {   'id':1,
-        'title':'Woof',
-        'genre':'Fiction',
-        'synopsis':'A book about dogs'
-            },
-    {
-        'id':2,
-        'title':'Mario',
-        'genre':'Gaming',
-        'synopsis':'Mario goes to save princess Peach'
-    }
-        ]
+library = {}
+
+users = {}
+
+
 class Books():
+    """Books model"""
+    def __init__(self):
+        self.books = {}
 
-    def __init__(self,title,genre,synopsis):
-        self.title = title
-        self.genre = genre
-        self.synopsis = synopsis
+    #gets all books
+    def get_all_books():
+        return library
 
-    #get all books
-    def get_all_books(self):
-        return books
+    #return a single books
+    def get_a_book(self, id):
+        return library[id]
 
-    #get a book by id
-    def get_a_book(self, book_id):
-        return (self.books[book_id])
+    #delete a books
+    def delete_book(self, id):
+        library.remove('id')
+        return library
 
-    #add a book
-    def put(self, title, genre, synopsis):
-        book = {
-            'id': books[-1]['id'] + 1,
-            'title': self.title,
-            'genre': self.genre,
-            'synopsis': self.synopsis
-        }
-        books.append(book)
+    #add book
+    def add_book(self, title, genre, synopsis, id):
+        self.books['title'] = title
+        self.books['genre'] = genre
+        self.books['synopsis'] = synopsis
+
+        library[id] = self.books
+
+        return library[id]
+
+    #modify a book
+    def modify_book(self, title, genre, synopsis):
+        self.books['title'] = title
+        self.books['genre'] = genre
+        self.books['synopsis'] = synopsis
+
+
+class User():
+    """Users model"""
+    def __init__(self):
+        self.user = {}
+
+    #gets all users
+    def get_all_users():
+        return users
+
+    #return a single user
+    def get_a_user(self, id):
+        return users[id]
+
+    #delete a users
+    def delete_a_user(self, id):
+        users.remove('id')
+        return users
+
+    #add a user
+    def add_user(self, username, email, id):
+        self.user['modify_username'] = title
+        self.user['email'] = email
+        self.user['id'] = id
+
+        users[id] = self.user
+
+        return users[id]
+
+    #modify a user
+    def modify_username(self, username):
+        self.user['username'] = username
