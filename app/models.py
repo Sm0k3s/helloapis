@@ -10,27 +10,27 @@ class Books():
         self.books = {}
 
     #gets all books
-    def get_all_books():
+    def get_all_books(self):
         return library
 
     #return a single books
-    def get_a_book(self, id):
-        return library[id]
+    def get_a_book(self, book_id):
+        return library[book_id]
 
     #delete a books
-    def delete_book(self, id):
-        library.remove('id')
+    def delete_book(self, book_id):
+        library.remove(book_id)
         return library
 
     #add book
-    def add_book(self, title, genre, synopsis, id):
+    def add_book(self, title, genre, synopsis, book_id):
         self.books['title'] = title
         self.books['genre'] = genre
         self.books['synopsis'] = synopsis
+        
+        library[book_id] = self.books
 
-        library[id] = self.books
-
-        return library[id]
+        return library[book_id]
 
     #modify a book
     def modify_book(self, title, genre, synopsis):
@@ -45,23 +45,23 @@ class User():
         self.user = {}
 
     #gets all users
-    def get_all_users():
+    def get_all_users(self):
         return users
 
     #return a single user
-    def get_a_user(self, id):
-        return users[id]
+    def get_a_user(self, user_id):
+        return users[user_id]
 
     #delete a users
-    def delete_a_user(self, id):
-        users.remove('id')
+    def delete_a_user(self, user_id):
+        users.remove(user_id)
         return users
 
     #add a user
-    def add_user(self, username, email, id):
-        self.user['modify_username'] = title
+    def add_user(self, username, email, user_id):
+        self.user['username'] = username
         self.user['email'] = email
-        self.user['id'] = id
+        self.user['id'] = user_id
 
         users[id] = self.user
 
