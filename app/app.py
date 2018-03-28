@@ -23,14 +23,14 @@ def get_users():
 """gets a single book by id"""
 @app.route('/api/v1/books/<int:book_id>', methods=['GET'])
 def get_book(book_id):
-    retrieve_book = {retrieve_book for book in library if library[book_id] == book_id}
+    retrieve_book = [retrieve_book for book in library if library[book_id] == book_id]
     return jsonify(retrieve_book), 200
 
 
 """gets a single user by id"""
 @app.route('/api/v1/users/<int:user_id>', methods=['GET'])
 def get_user(user_id):
-    retrieve_user = {retrieve_user for user in users if stalker[user_id] == user_id}
+    one_user = [one_user for one_user in stalker if one_user[user_id] == user_id]
     if len(retrieve_user) == 0:
         abort(404)
     return jsonify(retrieve_user), 200

@@ -1,7 +1,5 @@
 
-library = {}
-
-users = {}
+from app.data import library, users
 
 
 class Books():
@@ -9,30 +7,30 @@ class Books():
     def __init__(self):
         self.books = {}
 
-    #gets all books
+    """gets all books from the library dictionary"""
     def get_all_books(self):
         return library
 
-    #return a single books
+    """return a single books searches a book by its id"""
     def get_a_book(self, book_id):
-        return library[book_id]
+        return library[0:]['book_id']
 
-    #delete a books
+    """removes a books from the library"""
     def delete_book(self, book_id):
         library.remove(book_id)
         return library
 
-    #add book
+    """adds a book to library"""
     def add_book(self, title, genre, synopsis, book_id):
-        self.books['title'] = title
-        self.books['genre'] = genre
-        self.books['synopsis'] = synopsis
-        
-        library[book_id] = self.books
+        self.title = title
+        self.genre = genre
+        self.synopsis = synopsis
+        self.book_id = book_id
+        a_book = {'title': title, 'genre': genre, 'synopsis': synopsis, 'book_id': book_id}
+        library.update(a_book)
+        return library
 
-        return library[book_id]
-
-    #modify a book
+    """modify a book"""
     def modify_book(self, title, genre, synopsis):
         self.books['title'] = title
         self.books['genre'] = genre
