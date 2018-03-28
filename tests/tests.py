@@ -1,16 +1,17 @@
 import unittest
+from flask import jsonify
+from app import models
 
-from app import models, data
 
 class testing_models(unittest.TestCase):
     """books testing class"""
     def setUp(self):
-        self.my_book = Books()
+        self.user = models.User()
+        self.bookie = models.Books()
 
 
     def test_add_book(self):
-        self.my_book.put('Paradise','Fantasy','Dreams of a happy soul in a happy place')
-        self.assertIn('Paradise', books[-1])
-
+        result = self.bookie.add_book('Paradise', 'Fantasy', 'Dreams of a happy soul in a happy place', 1)
+        self.assertIn('Paradise', result['title'])
 if __name__=='__main__':
     unittest.main()
